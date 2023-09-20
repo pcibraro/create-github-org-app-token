@@ -1,0 +1,23 @@
+name: "Create GitHub Organization App Token"
+description: "GitHub Action for creating a GitHub App installation access token for an organization"
+author: "Pablo Cibraro"
+branding:
+  icon: "lock"
+  color: "gray-dark"
+inputs:
+  app_id:
+    description: "GitHub App ID"
+    required: true
+  private_key:
+    description: "GitHub App private key"
+    required: true
+  organization_name:
+    description: "GitHub Organization Name"
+    required: true
+outputs:
+  token:
+    description: "GitHub installation access token"
+runs:
+  using: "node20"
+  main: "dist/main.cjs"
+  post: "dist/post.cjs"
